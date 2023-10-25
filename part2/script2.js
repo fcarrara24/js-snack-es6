@@ -82,7 +82,7 @@ console.log(nomeEFalli)
 //bonus: printing to screen
 
 function printToScreenFirst() {
-    document.getElementById('snack1').innerHTML = `<div style="min-width: 200px;">bicicletta: ${biciMinore.nome}</div> <div>peso: ${biciMinore.peso}</div>`
+    document.getElementById('snack1').innerHTML = `<span style="min-width: 200px;">bicicletta: ${biciMinore.nome}</span> <span>peso: ${biciMinore.peso}</span>`
 }
 printToScreenFirst();
 
@@ -93,7 +93,7 @@ function printToScreenSecond() {
 
     let toAppend = ``;
     nomeEFalli.forEach((element) => {
-        toAppend += `<div style="min-width: 200px;">Squadra: ${element[0]}</div> <div>falli: ${element[1]}</div>`
+        toAppend += `<span style="min-width: 200px;">Squadra: ${element[0]}</span> <div>falli: ${element[1]}</div> <br>`
     });
     document.getElementById('snack2').innerHTML = toAppend;
 }
