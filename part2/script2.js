@@ -27,11 +27,53 @@ let biciMinore;
 arrayBici.forEach(element => {
 
     if (pesoMinore > element.peso) {
+        const { weight } = element
         biciMinore = element;
-        pesoMinore = element.peso;
+        pesoMinore = weight;
     }
 
 });
 
+
 biciMinore.printBike();
 
+//snack 4
+
+class Squadra {
+    nome;
+    puntiFatti = 0;
+    falliSubiti = 0;
+    constructor(nome) {
+        this.nome = nome
+    }
+    assignRnd() {
+        this.puntiFatti = rndInt(0, 10);
+        this.falliSubiti = rndInt(0, 10);
+    }
+    returnNameFaults() {
+        return [this.nome, this.falliSubiti]
+    }
+}
+
+function rndInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+const arraySquadre = ['LAZIO', 'ROMA', 'JUVE', 'NAPOLI', 'ATALANTA', 'FIORENTINA', 'FROSINONE', 'MILAN', 'TORINO']
+
+//creazione di array di dquaddre con partuta
+const arraySquadreEPartite = arraySquadre.map(nome => new Squadra(nome));
+
+
+
+//assegnazione punti a ciascun componente
+arraySquadreEPartite.forEach(squadra => {
+    squadra.assignRnd() // assigninig random points
+})
+
+
+
+const nomeEFalli = arraySquadreEPartite.map(element => element.returnNameFaults());
+
+//ritornare il nome e i falli subiti
+console.log(nomeEFalli)
