@@ -77,3 +77,24 @@ const nomeEFalli = arraySquadreEPartite.map(element => element.returnNameFaults(
 
 //ritornare il nome e i falli subiti
 console.log(nomeEFalli)
+
+
+//bonus: printing to screen
+
+function printToScreenFirst() {
+    document.getElementById('snack1').innerHTML = `<div style="min-width: 200px;">bicicletta: ${biciMinore.nome}</div> <div>peso: ${biciMinore.peso}</div>`
+}
+printToScreenFirst();
+
+
+
+
+function printToScreenSecond() {
+
+    let toAppend = ``;
+    nomeEFalli.forEach((element) => {
+        toAppend += `<div style="min-width: 200px;">Squadra: ${element[0]}</div> <div>falli: ${element[1]}</div>`
+    });
+    document.getElementById('snack2').innerHTML = toAppend;
+}
+printToScreenSecond();
